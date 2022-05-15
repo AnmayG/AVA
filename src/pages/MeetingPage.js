@@ -2,13 +2,11 @@ import React, { useEffect, useRef, useState } from "react";
 import Navbar from "../components/general/Navbar";
 import Jitsi from "../components/MeetingComponents/Jitsi";
 import Sidebar from "../components/MeetingComponents/Sidebar";
-import Handsfree from "../components/TensorflowComponents/HandModel";
 import { useNavigate } from "react-router-dom";
 
 function MeetingPage() {
   const jitsiRef = useRef(null);
   const [jitsiWidth, setJitsiWidth] = useState(null);
-  let navigate = useNavigate();
 
   useEffect(() => {
     setJitsiWidth(jitsiRef.current ? jitsiRef.current.clientWidth : null);

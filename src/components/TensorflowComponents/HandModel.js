@@ -14,12 +14,16 @@ const HandsfreeModel = new Handsfree({
     minDetectionConfidence: 0.5,
     minTrackingConfidence: 0.5,
   },
-  // facemesh: {
-  //   enabled: true,
-  //   maxNumFaces: 1,
-  //   minDetectionConfidence: 0.5,
-  //   minTrackingConfidence: 0.5,
-  // },
+  setup: {
+    video: {
+      $el: document.querySelector("#handsfree-video")
+    },
+    canvas: {
+      hands: {
+        $el: document.querySelector("#handsfree-canvas")
+      }
+    }
+  }
 });
 
 export default HandsfreeModel;
