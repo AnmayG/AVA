@@ -1,18 +1,28 @@
+import { SignLanguage, BrightnessHigh, Contrast } from "@mui/icons-material";
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 function Sidebar() {
+  let navigate = useNavigate();
 
   return (
-    <div>
-      <div>
-        <button
-          onClick={() => {
-            alert("button clicked");
-            // setSidebarWidth(250);
-          }}
-        >
-          Increase width
-        </button>
+    <div className="bg-gray-100 h-full">
+      <div className="flex flex-col items-center">
+        <SignLanguage
+          className="mt-4"
+          style={{ fontSize: 50 }}
+          onClick={() => {}}
+        />
+        <BrightnessHigh
+          className="mt-4"
+          style={{ fontSize: 50 }}
+          onClick={() => {}}
+        />
+        <Contrast
+          className="mt-4"
+          style={{ fontSize: 50 }}
+          onClick={() => {}}
+        />
       </div>
     </div>
   );
