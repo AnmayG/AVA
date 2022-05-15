@@ -29,7 +29,7 @@ function Sidebar() {
                   .getElementById("jitsiConferenceFrame0")
                   .setAttribute(
                     "style",
-                    "-webkit-filter:brightness(" + 100 + "%)"
+                    "height: 100%; width: 100%; border: 0px; -webkit-filter:brightness(" + 100 + "%)"
                   );
                 setBrightnessFilterOn(false);
               } else {
@@ -37,7 +37,7 @@ function Sidebar() {
                   .getElementById("jitsiConferenceFrame0")
                   .setAttribute(
                     "style",
-                    "-webkit-filter:brightness(" + 50 + "%)"
+                    "height: 100%; width: 100%; border: 0px; -webkit-filter:brightness(" + 50 + "%)"
                   );
                 setBrightnessFilterOn(true);
               }
@@ -57,12 +57,12 @@ function Sidebar() {
               if (contrastFilterOn) {
                 document
                   .getElementById("jitsiConferenceFrame0")
-                  .setAttribute("style", "-webkit-filter:invert(" + 0 + "%)");
+                  .setAttribute("style", "height: 100%; width: 100%; border: 0px; -webkit-filter:invert(" + 0 + "%);");
                 setContrastFilterOn(false);
               } else {
                 document
                   .getElementById("jitsiConferenceFrame0")
-                  .setAttribute("style", "-webkit-filter:invert(" + 100 + "%)");
+                  .setAttribute("style", "height: 100%; width: 100%; border: 0px; -webkit-filter:invert(" + 100 + "%);");
                 setContrastFilterOn(true);
               }
             }}

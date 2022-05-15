@@ -26,8 +26,7 @@ function Jitsi(props) {
           getIFrameRef={(node) => {
             // hacky way to get the height as a string in pixels
             node.style.height = (window.innerHeight * 15) / 16 + "px";
-
-            node.style.width = (window.innerWidth -75) + "px";
+            node.style.width = window.innerWidth - 75 + "px";
           }}
         />
       </div>
