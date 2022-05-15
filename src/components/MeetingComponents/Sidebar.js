@@ -4,6 +4,8 @@ import { useNavigate } from "react-router-dom";
 
 function Sidebar() {
   let navigate = useNavigate();
+  const [brightnessFilterOn, setBrightnessFilterOn] = useState(false);
+  const [contrastFilterOn, setContrastFilterOn] = useState(false);
 
   return (
     <div className="bg-gray-100 h-full">
@@ -16,12 +18,19 @@ function Sidebar() {
         <BrightnessHigh
           className="mt-4"
           style={{ fontSize: 50 }}
-          onClick={() => {}}
+          onClick={() => {
+            document
+              .getElementById("jitsiConferenceFrame0")
+              .setAttribute("style", "-webkit-filter:brightness(" + 50 + "%)");}}
         />
         <Contrast
           className="mt-4"
           style={{ fontSize: 50 }}
-          onClick={() => {}}
+          onClick={() => {
+            document
+              .getElementById("jitsiConferenceFrame0")
+              .setAttribute("style", "-webkit-filter:invert(" + 100 + "%)");
+          }}
         />
       </div>
     </div>

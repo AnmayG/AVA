@@ -21,7 +21,7 @@ const LogIn = () => {
     // Popup signin flow rather than redirect flow.
     signInFlow: "redirect",
     // Redirect to /signedIn after sign in is successful. Alternatively you can provide a callbacks.signInSuccess function.
-    signInSuccessUrl: "/",
+    signInSuccessUrl: "/dashboard",
     signInOptions: [firebase.auth.GoogleAuthProvider.PROVIDER_ID],
   };
 

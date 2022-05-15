@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 #jitsiConferenceFrame0 {
-  /* -webkit-filter: invert(100%); */
+  /* -webkit-filter:brightness(50%); */
 }
 
 body {
