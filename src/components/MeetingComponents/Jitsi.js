@@ -4,8 +4,8 @@ import { JitsiMeeting } from "@jitsi/react-sdk";
 function Jitsi(props) {
   // Hack to always reload upon entry and initialize Jitsi
   useEffect(() => {
-    if(!window.location.hash) {
-      window.location = window.location + '#loaded';
+    if (!window.location.hash) {
+      window.location = window.location + "#loaded";
       window.location.reload();
     }
   }, []);
@@ -25,17 +25,9 @@ function Jitsi(props) {
           roomName="test-room"
           getIFrameRef={(node) => {
             // hacky way to get the height as a string in pixels
-            if (props.cameraHeight) {
-              node.style.height = props.cameraHeight*15/16 + "px";
-            } else {
-              node.style.height = window.innerHeight*15/16 + "px";
-            }
+            node.style.height = (window.innerHeight * 15) / 16 + "px";
 
-            if (props.cameraWidth) {
-              node.style.width = props.cameraWidth + "px";
-            } else {
-              node.style.width = window.innerWidth + "px";
-            }
+            node.style.width = (window.innerWidth -75) + "px";
           }}
         />
       </div>

@@ -15,23 +15,59 @@ function Sidebar() {
           style={{ fontSize: 50 }}
           onClick={() => {}}
         />
-        <BrightnessHigh
-          className="mt-4"
-          style={{ fontSize: 50 }}
-          onClick={() => {
-            document
-              .getElementById("jitsiConferenceFrame0")
-              .setAttribute("style", "-webkit-filter:brightness(" + 50 + "%)");}}
-        />
-        <Contrast
-          className="mt-4"
-          style={{ fontSize: 50 }}
-          onClick={() => {
-            document
-              .getElementById("jitsiConferenceFrame0")
-              .setAttribute("style", "-webkit-filter:invert(" + 100 + "%)");
-          }}
-        />
+        <div
+          className={
+            "flex justify-center w-full mt-4 " +
+            (brightnessFilterOn ? "bg-gray-500" : "")
+          }
+        >
+          <BrightnessHigh
+            style={{ fontSize: 50 }}
+            onClick={() => {
+              if (brightnessFilterOn) {
+                document
+                  .getElementById("jitsiConferenceFrame0")
+                  .setAttribute(
+                    "style",
+                    "-webkit-filter:brightness(" + 100 + "%)"
+                  );
+                setBrightnessFilterOn(false);
+              } else {
+                document
+                  .getElementById("jitsiConferenceFrame0")
+                  .setAttribute(
+                    "style",
+                    "-webkit-filter:brightness(" + 50 + "%)"
+                  );
+                setBrightnessFilterOn(true);
+              }
+            }}
+          />
+        </div>
+
+        <div
+          className={
+            "flex justify-center w-full mt-4 " +
+            (contrastFilterOn ? "bg-gray-500" : "")
+          }
+        >
+          <Contrast
+            style={{ fontSize: 50 }}
+            onClick={() => {
+              if (contrastFilterOn) {
+                document
+                  .getElementById("jitsiConferenceFrame0")
+                  .setAttribute("style", "-webkit-filter:invert(" + 0 + "%)");
+                setContrastFilterOn(false);
+              } else {
+                document
+                  .getElementById("jitsiConferenceFrame0")
+                  .setAttribute("style", "-webkit-filter:invert(" + 100 + "%)");
+                setContrastFilterOn(true);
+              }
+            }}
+          />
+        </div>
       </div>
     </div>
   );

@@ -8,7 +8,6 @@ import { useNavigate } from "react-router-dom";
 function MeetingPage() {
   const jitsiRef = useRef(null);
   const [jitsiWidth, setJitsiWidth] = useState(null);
-  const [jitsiHeight, setJitsiHeight] = useState(null);
   let navigate = useNavigate();
 
   useEffect(() => {
@@ -23,7 +22,7 @@ function MeetingPage() {
 
         <div className="flex w-full h-full">
           <div className="w-full" ref={jitsiRef}>
-            <Jitsi cameraWidth={jitsiWidth} cameraHeight={jitsiHeight} />
+            <Jitsi cameraWidth={jitsiWidth} />
           </div>
           <div
             // className={`h-full w-[${
