@@ -35,6 +35,9 @@ const Navbar = () => {
           A V A
         </Link>
       </div>
+      {/* <div className="flex justify-evenly items-center whitespace-nowrap">
+        Get Started
+      </div> */}
     </div>
   );
 };

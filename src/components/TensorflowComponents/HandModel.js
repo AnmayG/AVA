@@ -1,22 +1,25 @@
-// https://blog.tensorflow.org/2021/11/3D-handpose.html
-import * as handPoseDetection from "@tensorflow-models/hand-pose-detection";
-import * as tf from "@tensorflow/tfjs-core";
-// Register WebGL backend.
-import "@tensorflow/tfjs-backend-webgl";
-import '@mediapipe/hands';
+import Handsfree from "handsfree";
 
-// Imports tensorflow hand pose model for tfjs lite
-const model = handPoseDetection.SupportedModels.MediaPipeHands;
-const detectorConfig = {
-  modelType:"full", 
-  runtime: 'tfjs-webgl',
-};
+const HandsfreeModel = new Handsfree({
+  hands: {
+    enabled: true,
+    maxNumHands: 2,
+    minDetectionConfidence: 0.5,
+    minTrackingConfidence: 0.5,
+  },
+  pose: {
+    enabled: true,
+    upperBodyOnly: true,
+    smoothLandmarks: true,
+    minDetectionConfidence: 0.5,
+    minTrackingConfidence: 0.5,
+  },
+  facemesh: {
+    enabled: true,
+    maxNumFaces: 1,
+    minDetectionConfidence: 0.5,
+    minTrackingConfidence: 0.5,
+  },
+});
 
-// Create a detector based on the model and detector
-async function createDetector() {
-  const detector = await handPoseDetection.createDetector(model, detectorConfig);
-  return detector;
-}
-
-// Export for outside usage
-export default createDetector;
+export default HandsfreeModel;

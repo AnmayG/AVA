@@ -10,7 +10,8 @@ class App extends Component {
     return (
       <BrowserRouter>
         <Routes>
-          <Route exact path="/" element={<MeetingPage />} />
+          <Route exact path="/" element={<LandingPage />} />
+          <Route exact path="/meeting" element={<MeetingPage />} />
         </Routes>
       </BrowserRouter>
     );
